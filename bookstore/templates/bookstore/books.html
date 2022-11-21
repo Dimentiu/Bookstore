@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+</head>
+<body>
+    <ul><a href="{% url 'bookstore:index' %}">Back to main menu</a></ul>
+    <h1>Information of books:</h1>
+    <li>Count of books: {{ info.title__count }}</li>
+    <li>Average price: {{ info.price__avg}}</li>
+    <li>Max price: {{ info.price__max }}</li>
+    <li>Min price: {{ info.price__min }}</li>
+    <li>Max pages: {{ info.pages__max }}</li>
+    <li>Min pages: {{ info.pages__min }}</li>
+   <h2>List of books</h2>
+   <ul>
+        {% for obj in books %}
+            <li><a href="{% url 'bookstore:books_info' id=obj.id %}">{{ obj.id }} "{{ obj.title }}" {{ obj.author }}</a></li>
+        {% endfor %}
+    </ul>
+
+
+</body>
+</html>

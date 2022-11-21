@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Publishers</title>
+</head>
+<body>
+   <ul><a href="{% url 'bookstore:index' %}">Back to main menu</a></ul>
+   <h1>List of publishers:</h1>
+   <ul>
+        {% for obj in pub_list%}
+            <li><a href="{% url 'bookstore:publisher_info' pk=obj.pk %}"> {{ obj.name }}</a></li>
+            <ul>Store: {{ obj.store }}</ul>
+            <ul>Average price of books: {{ obj.books.price__avg }}</ul>
+        {% endfor %}
+    </ul>
+</body>
+</html>

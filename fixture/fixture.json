@@ -1,0 +1,124 @@
+[
+{
+    "model": "bookstore.author",
+    "pk": 1,
+    "fields": {
+        "name": "Terry",
+        "surname": "Pratchett",
+        "country": "The UK"
+    }
+},
+{
+    "model": "bookstore.author",
+    "pk": 2,
+    "fields": {
+        "name": "Neil",
+        "surname": "Gaiman",
+        "country": "Great Britain"
+    }
+},
+{
+    "model": "bookstore.author",
+    "pk": 3,
+    "fields": {
+        "name": "Tess",
+        "surname": "Geritsen",
+        "country": "The USA"
+    }
+},
+{
+    "model": "bookstore.store",
+    "pk": 1,
+    "fields": {
+        "name": "Staryi Lev",
+        "address": "Kyiv, Arsenalna 3"
+    }
+},
+{
+    "model": "bookstore.store",
+    "pk": 2,
+    "fields": {
+        "name": "Discworld Emprorium",
+        "address": "Kyiv, Obolon 14"
+    }
+},
+{
+    "model": "bookstore.store",
+    "pk": 3,
+    "fields": {
+        "name": "BookYe",
+        "address": "Lviv, Square 15"
+    }
+},
+{
+    "model": "bookstore.publisher",
+    "pk": 1,
+    "fields": {
+        "name": "Staryi Lev",
+        "year": 1996
+    }
+},
+{
+    "model": "bookstore.publisher",
+    "pk": 2,
+    "fields": {
+        "name": "Emprorium",
+        "year": 2015
+    }
+},
+{
+    "model": "bookstore.publisher",
+    "pk": 3,
+    "fields": {
+        "name": "Bookstore",
+        "year": 1997
+    }
+},
+{
+    "model": "bookstore.book",
+    "pk": 1,
+    "fields": {
+        "title": "Equal rites",
+        "pages": 340,
+        "price": "280.00",
+        "author": 1,
+        "pubdate": "2022-11-12",
+        "publisher": [
+            1,
+            17
+        ]
+    }
+},
+{
+    "model": "bookstore.book",
+    "pk": 2,
+    "fields": {
+        "title": "Lords and ladies",
+        "pages": 450,
+        "price": "265.00",
+        "author": 1,
+        "pubdate": "2022-11-12",
+        "publisher": [
+            1,
+            4,
+            11
+        ]
+    }
+},
+{
+    "model": "bookstore.book",
+    "pk": 3,
+    "fields": {
+        "title": "Sandman",
+        "pages": 260,
+        "price": "230.00",
+        "author": 2,
+        "pubdate": "2022-11-12",
+        "publisher": [
+            2,
+            5,
+            17
+        ]
+    }
+}
+]

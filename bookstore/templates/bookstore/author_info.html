@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Author information</title>
+</head>
+<body>
+<ul><a href="{% url 'bookstore:index' %}">Back to main menu</a></ul>
+<ul><a href="{% url 'bookstore:authors' %}">Back to the list of authors</a></ul>
+<ul><a href="{% url 'bookstore:update_author' pk=id %}">Update this author</a></ul>
+<ul><a href="{% url 'bookstore:delete_author' pk=id %}">Delete this author</a></ul>
+<h1>Information about author:</h1>
+    <ul>ID: {{ id }}</ul>
+    <ul>Name: {{ name }} {{ surname }}</ul>
+    <ul>Country: {{ country }}</ul>
+<h2>Books written by {{ surname }}: </h2>
+    {% for obj in books %}
+            <ul><a href="{% url 'bookstore:books_info' id=obj.id %}">{{ obj.id }} "{{ obj.title }}"</a></ul>
+    {% endfor %}
+
+</body>
+
+</html>

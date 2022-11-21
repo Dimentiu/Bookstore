@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail author</title>
+</head>
+<body>
+<h1>Detail about {{ object }}</h1>
+    <ul>ID: {{ object.id }}</ul>
+    <ul>Name: {{ object.name }} {{ object.surname }}</ul>
+    <ul>Country: {{ object.country }}</ul>
+<ul><a href="{% url 'bookstore:index' %}">Back to main menu</a></ul>
+<ul><a href="{% url 'bookstore:authors' %}">Back to author list</a></ul>
+</body>
+</html>

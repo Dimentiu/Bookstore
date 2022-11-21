@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookstore</title>
+</head>
+<body>
+    <h1>Welcome to bookstore "Emprorium"!</h1>
+    <h2>To the list of:</h2>
+    <p><a href="{% url 'bookstore:books' %}">Books</a></p>
+    <p><a href="{% url 'bookstore:authors' %}">Authors</a></p>
+    <p><a href="{% url 'bookstore:stores' %}">Stores</a></p>
+    <p><a href="{% url 'bookstore:publishers' %}">Publishers</a></p>
+</body>
+</html>

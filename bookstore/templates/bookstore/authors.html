@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Authors</title>
+</head>
+<body>
+<ul><a href="{% url 'bookstore:index' %}">Back to main menu</a></ul>
+    <h1>Count of authors: {{ authors.count }}</h1>
+   <h2>List of authors</h2>
+   <ul>
+        {% for obj in authors %}
+            <li><a href="{% url 'bookstore:author_info' id=obj.id %}">{{ obj.name }} {{ obj.surname }}</a></li>
+        {% endfor %}
+    </ul>
+<ul><a href="{% url 'bookstore:create_author' %}">Create author</a></ul>
+<ul><a href="{% url 'bookstore:pagination_author' %}">Pagination of authors</a></ul>
+</body>
+</html>
