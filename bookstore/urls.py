@@ -15,9 +15,4 @@ urlpatterns = [
     path('stores/<int:id>', stores_info, name="stores_info"),
     path('publishers/', publishers_list, name='publishers'),
     path('publishers/<int:pk>', publisher_info, name='publisher_info'),
-    path('authors/create_author', views.AuthorCreateView.as_view(), name='create_author'),
-    path('authors/<int:pk>/update/', views.AuthorUpdateView.as_view(), name='update_author'),
-    path('authors/<int:pk>/delete/', views.AuthorDeleteView.as_view(), name='delete_author'),
-    path('authors/pagination/', views.AuthorListView.as_view(), name='pagination_author'),
-    path('authors/pagination/<int:pk>/detail/', views.AuthorDetailView.as_view(), name='detail_author')
 ]

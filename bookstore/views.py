@@ -4,7 +4,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from django.views import generic
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 
 from .models import Author, Book, Publisher, Store
@@ -121,38 +120,3 @@ def publisher_info(request, pk):
                    'books': books
                    }
                   )
-
-
-class AuthorCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
-    model = Author
-    fields = ['name', 'surname', 'country']
-    template_name = 'bookstore/create_author.html'
-    success_message = "New author was created successfully!"
-    success_url = reverse_lazy('bookstore:authors')
-
-
-class AuthorUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
-    model = Author
-    fields = ['name', 'surname', 'country']
-    template_name = 'bookstore/update_author.html'
-    success_message = "Profile was updated successfully!"
-    success_url = reverse_lazy('bookstore:authors')
-
-
-class AuthorDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
-    model = Author
-    fields = ['name', 'surname', 'country']
-    template_name = 'bookstore/delete_author.html'
-    success_message = "Profile was deleted successfully!"
-    success_url = reverse_lazy('bookstore:authors')
-
-
-class AuthorListView(generic.ListView):
-    model = Author
-    paginate_by = 3
-    template_name = 'bookstore/pagination_author.html'
-
-
-class AuthorDetailView(generic.DetailView):
-    model = Author
-    template_name = 'bookstore/detail_author.html'
