@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete author</title>
+</head>
+<body>
+  <h1>Delete author</h1>
+  <p>Are you sure you want to delete the author: {{ author }}?</p>
+  <form action="" method="POST">
+    {% csrf_token %}
+      {{ form }}
+    <input type="submit" value="Delete"><ul><a href="{% url 'bookstore:authors' %}">Cancel</a></ul>
+    <ul><a href="{% url 'bookstore:index' %}">Back to main menu</a></ul>
+  </form>
+</body>
+</html>
