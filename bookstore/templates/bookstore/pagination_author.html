@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pagination</title>
+</head>
+<body>
+<h1>Pagination of authors</h1>
+<ul><a href="{% url 'bookstore:index' %}">Back to main menu</a></ul>
+<ul><a href="{% url 'bookstore:authors' %}">Back to author list</a></ul>
+{% block pagination %}
+    {% if is_paginated %}
+        {% for i in paginator.page_range %}
+        <ul><a href={{ request.path }}?page={{ i }}></a></ul>
+        {% endfor %}
+    <div class="pagination">
+     {% for obj in author_list %}
+        <li><a href="{% url 'bookstore:detail_author' pk=obj.id %}">{{ obj.name }} {{ obj.surname }}</a></li>
+        {% endfor %}
+        <span class="page-links">
+         <span class="page-current">
+          Page {{ page_obj.number }} or {{ page_obj.paginator.num_pages }}
+         </span>
+        {% if page_obj.has_previous %}
+            <ul><a href={{ request.path }}?page={{ page_obj.previous_page_number }}>Previous</a></ul>
+        {% endif %}
+         {% if page_obj.has_next%}
+            <ul><a href={{ request.path }}?page={{ page_obj.next_page_number }}>Next</a></ul>
+        {% endif %}
+      </span>
+    </div>
+    {% endif %}
+{% endblock %}
+</body>
+</html>
